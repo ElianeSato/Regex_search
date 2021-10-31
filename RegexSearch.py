@@ -8,12 +8,12 @@ import os, re
 cwd = Path.cwd()
 folder_content = os.listdir(cwd)
 
-pattern = input("Enter a pattern of text to search for: ")
+pattern = input("Enter a pattern to search for: ")
 regex = re.compile(pattern)
 
 
 for file in folder_content:
-    if ".git" != file and (".txt" in file):
+    if ".txt" in file:
         with open(file) as file:
             for line in file.readlines():
                 if regex.search(line):
